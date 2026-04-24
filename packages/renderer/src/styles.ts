@@ -11,66 +11,66 @@ export const styles = `
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  /* Teal Professional Palette */
-  --fire-50: #f0fdfa;
-  --fire-100: #ccfbf1;
-  --fire-200: #99f6e4;
-  --fire-300: #5eead4;
-  --fire-400: #2dd4bf;
-  --fire-500: #14b8a6;
-  --fire-600: #0d9488;
-  --fire-700: #0f766e;
-  --fire-800: #115e59;
-  --fire-900: #134e4a;
+  /* Gray Professional Palette */
+  --fire-50: #f9fafb;
+  --fire-100: #f3f4f6;
+  --fire-200: #e5e7eb;
+  --fire-300: #d1d5db;
+  --fire-400: #9ca3af;
+  --fire-500: #6b7280;
+  --fire-600: #4b5563;
+  --fire-700: #374151;
+  --fire-800: #1f2937;
+  --fire-900: #111827;
 
-  /* Teal Accents */
-  --ember: #14b8a6;
-  --ember-glow: #2dd4bf;
-  --magma: #0891b2;
-  --lava: #06b6d4;
+  /* Gray Accents */
+  --ember: #4b5563;
+  --ember-glow: #6b7280;
+  --magma: #6b7280;
+  --lava: #4b5563;
 
-  /* Plasma Purples (for traits) */
+  /* Plasma Purples (for traits) - keep for traits */
   --plasma-400: #a78bfa;
   --plasma-500: #8b5cf6;
   --plasma-600: #7c3aed;
 
-  /* Type Colors - Professional Teal */
-  --color-function: #14b8a6;
-  --color-struct: #0ea5e9;
+  /* Type Colors - Gray Professional */
+  --color-function: #4b5563;
+  --color-struct: #6b7280;
   --color-trait: #8b5cf6;
-  --color-alias: #f59e0b;
-  --color-field: #34d399;
-  --color-module: #94a3b8;
+  --color-alias: #6b7280;
+  --color-field: #6b7280;
+  --color-module: #9ca3af;
 
-  /* Dark Theme (Default) */
-  --bg-void: #0f172a;
-  --bg-deep: #1e293b;
-  --bg-surface: #1e293b;
-  --bg-raised: #334155;
-  --bg-elevated: #3b4760;
-  --bg-card: rgba(30, 41, 59, 0.8);
+  /* Dark Theme (Default) - now Gray */
+  --bg-void: #f9fafb;
+  --bg-deep: #f3f4f6;
+  --bg-surface: #ffffff;
+  --bg-raised: #e5e7eb;
+  --bg-elevated: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.9);
 
-  --text-primary: #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --text-dim: #475569;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --text-dim: #9ca3af;
 
-  --border-subtle: rgba(255, 255, 255, 0.05);
-  --border-default: rgba(255, 255, 255, 0.1);
-  --border-accent: rgba(20, 184, 166, 0.3);
+  --border-subtle: rgba(0, 0, 0, 0.04);
+  --border-default: rgba(0, 0, 0, 0.08);
+  --border-accent: rgba(75, 85, 99, 0.3);
 
   /* Glass Effects */
-  --glass-bg: rgba(30, 41, 59, 0.85);
-  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(0, 0, 0, 0.06);
   --glass-blur: 20px;
 
-  /* Gradients */
-  --gradient-fire: linear-gradient(135deg, #14b8a6 0%, #0d9488 50%, #0f766e 100%);
-  --gradient-ember: linear-gradient(135deg, #2dd4bf 0%, #14b8a6 100%);
-  --gradient-inferno: linear-gradient(135deg, #14b8a6 0%, #0891b2 50%, #0f766e 100%);
-  --gradient-glow: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.15) 0%, transparent 70%);
+  /* Gradients - Gray */
+  --gradient-fire: linear-gradient(135deg, #6b7280 0%, #4b5563 50%, #374151 100%);
+  --gradient-ember: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
+  --gradient-inferno: linear-gradient(135deg, #6b7280 0%, #4b5563 50%, #374151 100%);
+  --gradient-glow: radial-gradient(ellipse at center, rgba(75, 85, 99, 0.08) 0%, transparent 70%);
   --gradient-plasma: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
-  --gradient-cyan: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
+  --gradient-cyan: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
 
   /* Typography */
   --font-display: "Inter", system-ui, sans-serif;
@@ -110,7 +110,7 @@ export const styles = `
   --radius-full: 9999px;
 }
 
-[data-theme="light"] {
+/* [data-theme="light"] {
   --bg-void: #ffffff;
   --bg-deep: #f8fafc;
   --bg-surface: #ffffff;
@@ -132,11 +132,10 @@ export const styles = `
 
   --gradient-glow: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.08) 0%, transparent 70%);
 
-  /* Code block colors for light mode */
   --code-bg: #f6f8fa;
   --code-text: #24292f;
   --code-border: rgba(0, 0, 0, 0.1);
-}
+} */
 
 /* Light mode code block overrides */
 [data-theme="light"] .signature-card {

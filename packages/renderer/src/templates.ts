@@ -27,7 +27,7 @@ export function layoutTemplate(content: string, site: DocSite, _currentPath: str
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeHtml(site.config.name)} - API Documentation</title>
   <meta name="description" content="${escapeHtml(site.config.description)}">
-  <meta name="theme-color" content="#14b8a6">
+  <meta name="theme-color" content="#4b5563">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
   <link rel="stylesheet" href="${site.config.baseUrl}assets/styles.css">
 </head>
@@ -58,15 +58,6 @@ export function layoutTemplate(content: string, site: DocSite, _currentPath: str
         </button>
       </div>
       <div class="header-right">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"/>
-            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-          </svg>
-          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
-        </button>
         ${
           site.config.repository
             ? `
