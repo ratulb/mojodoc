@@ -1,38 +1,11 @@
 /**
  * Client-side JavaScript for the documentation site.
- * Inferno Design System - Modern interactions for Mojo docs.
+ * Gray Theme - Clean, minimal design.
  */
 
 export const scripts = `
 (function() {
   'use strict';
-
-  // ============================================================================
-  // Theme Toggle with Animation
-  // ============================================================================
-
-  const themeToggle = document.getElementById('theme-toggle');
-  const html = document.documentElement;
-
-  // Load saved theme or detect system preference (default to dark)
-  const savedTheme = localStorage.getItem('mojodoc-theme');
-  const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const initialTheme = savedTheme || (systemDark ? 'dark' : 'dark'); // Default dark
-  html.setAttribute('data-theme', initialTheme);
-
-  themeToggle?.addEventListener('click', () => {
-    const current = html.getAttribute('data-theme');
-    const next = current === 'light' ? 'dark' : 'light';
-
-    // Add transition class for smooth theme change
-    html.classList.add('theme-transitioning');
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('mojodoc-theme', next);
-
-    setTimeout(() => {
-      html.classList.remove('theme-transitioning');
-    }, 300);
-  });
 
   // ============================================================================
   // Sidebar Toggle with Smooth Animation
