@@ -8,72 +8,72 @@ export const styles = `
    Inferno Design System - For Mojo Documentation
    ============================================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-  /* Inferno Fire Palette */
-  --fire-50: #fff8f3;
-  --fire-100: #ffedd5;
-  --fire-200: #fed7aa;
-  --fire-300: #fdba74;
-  --fire-400: #fb923c;
-  --fire-500: #f97316;
-  --fire-600: #ea580c;
-  --fire-700: #c2410c;
-  --fire-800: #9a3412;
-  --fire-900: #7c2d12;
+  /* Teal Professional Palette */
+  --fire-50: #f0fdfa;
+  --fire-100: #ccfbf1;
+  --fire-200: #99f6e4;
+  --fire-300: #5eead4;
+  --fire-400: #2dd4bf;
+  --fire-500: #14b8a6;
+  --fire-600: #0d9488;
+  --fire-700: #0f766e;
+  --fire-800: #115e59;
+  --fire-900: #134e4a;
 
-  /* Ember Accents */
-  --ember: #ff6b35;
-  --ember-glow: #ff8f5c;
-  --magma: #dc2626;
-  --lava: #f59e0b;
+  /* Teal Accents */
+  --ember: #14b8a6;
+  --ember-glow: #2dd4bf;
+  --magma: #0891b2;
+  --lava: #06b6d4;
 
   /* Plasma Purples (for traits) */
   --plasma-400: #a78bfa;
   --plasma-500: #8b5cf6;
   --plasma-600: #7c3aed;
 
-  /* Type Colors - Vibrant */
-  --color-function: #ff6b35;
-  --color-struct: #06b6d4;
-  --color-trait: #a78bfa;
-  --color-alias: #fbbf24;
+  /* Type Colors - Professional Teal */
+  --color-function: #14b8a6;
+  --color-struct: #0ea5e9;
+  --color-trait: #8b5cf6;
+  --color-alias: #f59e0b;
   --color-field: #34d399;
   --color-module: #94a3b8;
 
   /* Dark Theme (Default) */
-  --bg-void: #09090b;
-  --bg-deep: #0c0c0f;
-  --bg-surface: #111114;
-  --bg-raised: #18181b;
-  --bg-elevated: #1f1f23;
-  --bg-card: rgba(24, 24, 27, 0.8);
+  --bg-void: #0f172a;
+  --bg-deep: #1e293b;
+  --bg-surface: #1e293b;
+  --bg-raised: #334155;
+  --bg-elevated: #3b4760;
+  --bg-card: rgba(30, 41, 59, 0.8);
 
-  --text-primary: #fafafa;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
-  --text-dim: #52525b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --text-dim: #475569;
 
-  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-subtle: rgba(255, 255, 255, 0.05);
   --border-default: rgba(255, 255, 255, 0.1);
-  --border-accent: rgba(255, 107, 53, 0.3);
+  --border-accent: rgba(20, 184, 166, 0.3);
 
   /* Glass Effects */
-  --glass-bg: rgba(17, 17, 20, 0.85);
+  --glass-bg: rgba(30, 41, 59, 0.85);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-blur: 20px;
 
   /* Gradients */
-  --gradient-fire: linear-gradient(135deg, #ff6b35 0%, #f97316 50%, #ea580c 100%);
-  --gradient-ember: linear-gradient(135deg, #ff8f5c 0%, #ff6b35 100%);
-  --gradient-inferno: linear-gradient(135deg, #ff6b35 0%, #dc2626 50%, #7c2d12 100%);
-  --gradient-glow: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+  --gradient-fire: linear-gradient(135deg, #14b8a6 0%, #0d9488 50%, #0f766e 100%);
+  --gradient-ember: linear-gradient(135deg, #2dd4bf 0%, #14b8a6 100%);
+  --gradient-inferno: linear-gradient(135deg, #14b8a6 0%, #0891b2 50%, #0f766e 100%);
+  --gradient-glow: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.15) 0%, transparent 70%);
   --gradient-plasma: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
   --gradient-cyan: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
 
   /* Typography */
-  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-display: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "Fira Code", monospace;
 
   /* Spacing Scale */
@@ -111,26 +111,26 @@ export const styles = `
 }
 
 [data-theme="light"] {
-  --bg-void: #fafafa;
-  --bg-deep: #f5f5f5;
+  --bg-void: #ffffff;
+  --bg-deep: #f8fafc;
   --bg-surface: #ffffff;
-  --bg-raised: #f8f8f8;
+  --bg-raised: #f1f5f9;
   --bg-elevated: #ffffff;
   --bg-card: rgba(255, 255, 255, 0.9);
 
-  --text-primary: #09090b;
-  --text-secondary: #3f3f46;
-  --text-muted: #71717a;
-  --text-dim: #a1a1aa;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-dim: #94a3b8;
 
   --border-subtle: rgba(0, 0, 0, 0.04);
   --border-default: rgba(0, 0, 0, 0.08);
-  --border-accent: rgba(255, 107, 53, 0.2);
+  --border-accent: rgba(20, 184, 166, 0.2);
 
   --glass-bg: rgba(255, 255, 255, 0.9);
   --glass-border: rgba(0, 0, 0, 0.06);
 
-  --gradient-glow: radial-gradient(ellipse at center, rgba(255, 107, 53, 0.08) 0%, transparent 70%);
+  --gradient-glow: radial-gradient(ellipse at center, rgba(20, 184, 166, 0.08) 0%, transparent 70%);
 
   /* Code block colors for light mode */
   --code-bg: #f6f8fa;
