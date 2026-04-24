@@ -317,7 +317,7 @@ body::before {
 }
 
 ::selection {
-  background: rgba(255, 107, 53, 0.3);
+  background: rgba(75, 85, 99, 0.3);
   color: var(--text-primary);
 }
 
@@ -412,13 +412,13 @@ code, pre {
 
 .logo-icon {
   font-size: 1.6rem;
-  filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.5));
+  filter: drop-shadow(0 0 8px rgba(75, 85, 99, 0.5));
   animation: fireGlow 2s ease-in-out infinite alternate;
 }
 
 @keyframes fireGlow {
-  from { filter: drop-shadow(0 0 8px rgba(255, 107, 53, 0.4)); transform: scale(1); }
-  to { filter: drop-shadow(0 0 16px rgba(255, 107, 53, 0.8)); transform: scale(1.05); }
+  from { filter: drop-shadow(0 0 8px rgba(75, 85, 99, 0.4)); transform: scale(1); }
+  to { filter: drop-shadow(0 0 16px rgba(75, 85, 99, 0.8)); transform: scale(1.05); }
 }
 
 .version {
@@ -483,7 +483,7 @@ code, pre {
   background: var(--bg-elevated);
   color: var(--text-secondary);
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.15);
+  box-shadow: 0 4px 20px rgba(75, 85, 99, 0.15);
 }
 
 .search-trigger:hover::before {
@@ -500,32 +500,6 @@ code, pre {
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-default);
   color: var(--text-dim);
-}
-
-/* Theme Toggle */
-.theme-toggle {
-  background: transparent;
-  border: 1px solid var(--border-subtle);
-  color: var(--text-secondary);
-  cursor: pointer;
-  padding: var(--space-2);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  transition: all var(--duration-fast) var(--ease-out-expo);
-}
-
-.theme-toggle:hover {
-  background: var(--bg-elevated);
-  border-color: var(--border-default);
-  color: var(--text-primary);
-  transform: rotate(15deg);
-}
-
-[data-theme="light"] .moon-icon,
-[data-theme="dark"] .sun-icon,
-html:not([data-theme]) .sun-icon {
-  display: none;
 }
 
 .github-link {
@@ -712,7 +686,7 @@ html:not([data-theme]) .sun-icon {
 }
 
 .nav-item.function .nav-item-badge {
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(255, 107, 53, 0.1));
+  background: linear-gradient(135deg, rgba(75, 85, 99, 0.2), rgba(75, 85, 99, 0.1));
   color: var(--color-function);
 }
 .nav-item.struct .nav-item-badge {
@@ -818,7 +792,7 @@ html:not([data-theme]) .sun-icon {
 .source-link:hover {
   color: var(--ember);
   border-color: var(--ember);
-  background: rgba(255, 107, 53, 0.1);
+  background: rgba(75, 85, 99, 0.1);
 }
 
 .source-link svg {
@@ -849,12 +823,12 @@ html:not([data-theme]) .sun-icon {
 .kind-badge.function, .kind-badge.fn {
   background: var(--gradient-fire);
   color: white;
-  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 2px 8px rgba(75, 85, 99, 0.3);
 }
 .kind-badge.struct {
   background: var(--gradient-cyan);
   color: white;
-  box-shadow: 0 2px 8px rgba(6, 182, 212, 0.3);
+  box-shadow: 0 2px 8px rgba(75, 85, 99, 0.3);
 }
 .kind-badge.trait {
   background: var(--gradient-plasma);
@@ -862,17 +836,17 @@ html:not([data-theme]) .sun-icon {
   box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
 }
 .kind-badge.alias, .kind-badge.const {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-  color: #78350f;
-  box-shadow: 0 2px 8px rgba(251, 191, 36, 0.3);
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(75, 85, 99, 0.3);
 }
 .kind-badge.module, .kind-badge.mod {
-  background: linear-gradient(135deg, #64748b 0%, #475569 100%);
+  background: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
   color: white;
-  box-shadow: 0 2px 8px rgba(100, 116, 139, 0.3);
+  box-shadow: 0 2px 8px rgba(75, 85, 99, 0.3);
 }
 .kind-badge.package, .kind-badge.pkg {
-  background: linear-gradient(135deg, #64748b 0%, #334155 100%);
+  background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
   color: white;
 }
 
@@ -952,7 +926,7 @@ html:not([data-theme]) .sun-icon {
 
 .item-ribbon.function {
   background: var(--gradient-fire);
-  box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+  box-shadow: 0 0 20px rgba(75, 85, 99, 0.4);
 }
 .item-ribbon.struct {
   background: var(--gradient-cyan);
@@ -1478,7 +1452,7 @@ a.type-link[href^="https://"]:hover .sig-type::after {
   font-weight: 700;
   padding: 2px 8px;
   border-radius: var(--radius-full);
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 107, 53, 0.05));
+  background: linear-gradient(135deg, rgba(75, 85, 99, 0.15), rgba(75, 85, 99, 0.05));
   color: var(--ember);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1811,7 +1785,7 @@ a.type-link[href^="https://"]:hover .sig-type::after {
 .api-card:hover {
   border-color: var(--border-accent);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.1);
+  box-shadow: 0 8px 24px rgba(75, 85, 99, 0.1);
   text-decoration: none;
 }
 
@@ -1892,9 +1866,9 @@ a.type-link[href^="https://"]:hover .sig-type::after {
   border: 1px solid var(--border-default);
   border-radius: var(--radius-xl);
   box-shadow:
-    0 0 0 1px rgba(255, 107, 53, 0.1),
+    0 0 0 1px rgba(75, 85, 99, 0.1),
     0 25px 60px rgba(0, 0, 0, 0.4),
-    0 0 100px rgba(255, 107, 53, 0.1);
+    0 0 100px rgba(75, 85, 99, 0.1);
   overflow: hidden;
   animation: searchSlideIn 0.2s var(--ease-out-expo);
 }
@@ -2153,7 +2127,7 @@ a.type-link[href^="https://"]:hover .sig-type::after {
 }
 
 .overview-table tbody tr:hover {
-  background: rgba(255, 107, 53, 0.04);
+  background: rgba(75, 85, 99, 0.04);
 }
 
 .overview-table .ov-name {
@@ -2468,7 +2442,7 @@ a.type-link[href^="https://"]:hover .sig-type::after {
 }
 
 [data-theme="light"] .overview-table tbody tr:hover {
-  background: rgba(255, 107, 53, 0.06);
+  background: rgba(75, 85, 99, 0.06);
 }
 
 [data-theme="light"] .overview-heading,
@@ -2530,13 +2504,13 @@ a.type-link[href^="https://"]:hover .sig-type::after {
 }
 
 .sidebar-kind-link:hover {
-  background: rgba(255, 107, 53, 0.06);
+  background: rgba(75, 85, 99, 0.06);
   color: var(--text-primary);
 }
 
 .sidebar-kind-link.active {
   border-left-color: var(--ember);
-  background: rgba(255, 107, 53, 0.08);
+  background: rgba(75, 85, 99, 0.08);
   color: var(--ember);
   font-weight: 600;
 }
@@ -2551,7 +2525,7 @@ a.type-link[href^="https://"]:hover .sig-type::after {
   min-width: 22px;
   height: 16px;
   border-radius: 3px;
-  background: rgba(255, 107, 53, 0.12);
+  background: rgba(75, 85, 99, 0.12);
   color: var(--ember);
   padding: 0 3px;
   letter-spacing: 0;
@@ -2581,21 +2555,21 @@ a.type-link[href^="https://"]:hover .sig-type::after {
 
 .sidebar-kind-link.active .sidebar-kind-count {
   color: var(--ember);
-  background: rgba(255, 107, 53, 0.12);
+  background: rgba(75, 85, 99, 0.12);
 }
 
 /* ── Light-mode overrides ── */
 
 [data-theme="light"] .sidebar-kind-link:hover {
-  background: rgba(255, 107, 53, 0.05);
+  background: rgba(75, 85, 99, 0.05);
 }
 
 [data-theme="light"] .sidebar-kind-link.active {
-  background: rgba(255, 107, 53, 0.08);
+  background: rgba(75, 85, 99, 0.08);
 }
 
 [data-theme="light"] .sidebar-kind-icon {
-  background: rgba(255, 107, 53, 0.1);
+  background: rgba(75, 85, 99, 0.1);
 }
 
 [data-theme="light"] .sidebar-kind-count {
@@ -2603,7 +2577,7 @@ a.type-link[href^="https://"]:hover .sig-type::after {
 }
 
 [data-theme="light"] .sidebar-kind-link.active .sidebar-kind-count {
-  background: rgba(255, 107, 53, 0.1);
+  background: rgba(75, 85, 99, 0.1);
 }
 
 /* ── Sidebar grouped items (package index + module detail) ── */
@@ -2648,25 +2622,25 @@ a.sidebar-group-label {
 }
 
 a.sidebar-group-label:hover {
-  background: rgba(255, 107, 53, 0.06);
+  background: rgba(75, 85, 99, 0.06);
   color: var(--text-primary);
 }
 
 a.sidebar-group-label.active {
   border-left-color: var(--ember);
-  background: rgba(255, 107, 53, 0.08);
+  background: rgba(75, 85, 99, 0.08);
   color: var(--ember);
   font-weight: 600;
 }
 
 a.sidebar-group-label.active .sidebar-kind-count {
   color: var(--ember);
-  background: rgba(255, 107, 53, 0.12);
+  background: rgba(75, 85, 99, 0.12);
 }
 
 /* div label (package-index pages) – whole row is the toggle */
 div.sidebar-group-label:hover {
-  background: rgba(255, 107, 53, 0.06);
+  background: rgba(75, 85, 99, 0.06);
   color: var(--text-primary);
 }
 
@@ -2689,7 +2663,7 @@ div.sidebar-group-label:hover {
 }
 
 .sidebar-fold-btn:hover {
-  background: rgba(255, 107, 53, 0.06);
+  background: rgba(75, 85, 99, 0.06);
   color: var(--text-primary);
 }
 
@@ -2741,26 +2715,26 @@ div.sidebar-group-label .sidebar-chevron {
 
 .sidebar-item-link:hover {
   color: var(--text-primary);
-  background: rgba(255, 107, 53, 0.05);
+  background: rgba(75, 85, 99, 0.05);
 }
 
 [data-theme="light"] div.sidebar-group-label:hover {
-  background: rgba(255, 107, 53, 0.05);
+  background: rgba(75, 85, 99, 0.05);
 }
 
 [data-theme="light"] a.sidebar-group-label:hover {
-  background: rgba(255, 107, 53, 0.05);
+  background: rgba(75, 85, 99, 0.05);
 }
 
 [data-theme="light"] a.sidebar-group-label.active {
-  background: rgba(255, 107, 53, 0.08);
+  background: rgba(75, 85, 99, 0.08);
 }
 
 [data-theme="light"] .sidebar-fold-btn:hover {
-  background: rgba(255, 107, 53, 0.05);
+  background: rgba(75, 85, 99, 0.05);
 }
 
 [data-theme="light"] .sidebar-item-link:hover {
-  background: rgba(255, 107, 53, 0.05);
+  background: rgba(75, 85, 99, 0.05);
 }
 `;
