@@ -446,7 +446,7 @@ function transformPackage(
     name: pkg.name,
     path,
     fullPath: path,
-    summary: pkg.summary || extractSummary(description),
+    summary: extractSummary(description),
     description,
     descriptionHtml,
     modules,

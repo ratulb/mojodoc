@@ -894,7 +894,7 @@ export function packageIndexTemplate(
           <span class="kind-badge package">pkg</span>
           ${escapeHtml(pkg.name)}
         </h1>
-        ${pkg.summary ? `<p class="page-summary">${escapeHtml(pkg.summary)}</p>` : ''}
+        ${pkg.summary && !pkg.description ? `<p class="page-summary">${escapeHtml(pkg.summary)}</p>` : ''}
       </header>
 
       ${

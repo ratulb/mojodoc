@@ -209,19 +209,22 @@ function preprocessDocstring(markdown: string): string {
 export function extractSummary(markdown: string): string {
   if (!markdown) return '';
 
-  // Split by double newline (paragraph break)
-  const paragraphs = markdown.split(/\n\n+/);
-  const firstPara = paragraphs[0] || '';
-
-  // Remove any leading/trailing whitespace and limit length
-  const summary = firstPara.trim();
+  // Strip markdown syntax so the entire content collapses to one line,
+  // then take the first ~200 chars as the summary.
+  const cleaned = markdown
+    .replace(/^#{1,6}\s+/gm, '') // Remove headings
+    .replace(/```[\s\S]*?```/g, '') // Remove code blocks
+    .replace(/`([^`]+)`/g, '$1') // Unwrap inline code
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // Links → text
+    .replace(/[*_~]/g, '') // Remove emphasis markers
+    .replace(/\s{2,}/g, ' '); // Collapse multiple spaces
 
   // Truncate if too long
-  if (summary.length > 200) {
-    return summary.substring(0, 197) + '...';
+  if (cleaned.length > 200) {
+    return cleaned.substring(0, 197) + '...';
   }
 
-  return summary;
+  return cleaned.trim();
 }
 
 // ============================================================================
