@@ -34,6 +34,7 @@ export interface Package {
   path: string;
   fullPath: string;
   summary: string;
+  summaryHtml: string;
   description: string;
   descriptionHtml: string;
   modules: Module[];
@@ -68,6 +69,7 @@ export interface Module {
   fullPath: string;
   urlPath: string;
   summary: string;
+  summaryHtml: string;
   description: string;
   descriptionHtml: string;
   functions: FunctionItem[];

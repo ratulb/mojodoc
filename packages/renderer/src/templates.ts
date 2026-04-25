@@ -950,7 +950,7 @@ export function packageIndexTemplate(
                     <span class="kind-badge module">mod</span>
                     <a href="${m.name}/index.html" class="ov-link">${escapeHtml(m.name)}</a>
                   </td>
-                  <td class="ov-summary">${m.summary ? escapeHtml(m.summary) : ''}</td>
+                  <td class="ov-summary">${m.summaryHtml ? m.summaryHtml : ''}</td>
                 </tr>
               `
                 )

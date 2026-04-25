@@ -98,13 +98,15 @@ export function transform(doc: MojoDocOutput, options: TransformOptions = {}): D
   } else {
     // Single module - wrap in synthetic package
     const mod = transformModule(decl as ModuleDecl, decl.name, decl.name, moduleFiles, linkCtx);
+    const syntheticSummaryHtml = renderMarkdown(decl.summary || '');
     rootPackage = {
       name: decl.name,
       path: decl.name,
       fullPath: decl.name,
-      summary: decl.summary || '',
+      summary: extractSummary(decl.summary || ''),
+      summaryHtml: syntheticSummaryHtml,
       description: decl.description || '',
-      descriptionHtml: '',
+      descriptionHtml: syntheticSummaryHtml,
       modules: [mod],
       subpackages: [],
       publicApi: [],
@@ -447,6 +449,7 @@ function transformPackage(
     path,
     fullPath: path,
     summary: extractSummary(description),
+    summaryHtml: descriptionHtml,
     description,
     descriptionHtml,
     modules,
@@ -488,12 +491,16 @@ function transformModule(
     }
   }
 
+  const moduleSummary = mod.summary || description;
+  const moduleSummaryHtml = renderMarkdown(moduleSummary);
+
   return {
     name: mod.name,
     path: `${parentPath}.${mod.name}`,
     fullPath,
     urlPath,
-    summary: mod.summary || extractSummary(description),
+    summary: extractSummary(moduleSummary),
+    summaryHtml: moduleSummaryHtml,
     description,
     descriptionHtml,
     functions: mod.functions.map((fn) => transformFunction(fn, linkCtx)),
