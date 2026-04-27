@@ -30,6 +30,7 @@ export function layoutTemplate(content: string, site: DocSite, _currentPath: str
   <meta name="theme-color" content="#4b5563">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
   <link rel="stylesheet" href="${site.config.baseUrl}assets/styles.css">
+  <script>document.documentElement.setAttribute('data-theme', 'light');</script>
 </head>
 <body>
   <div class="app">
