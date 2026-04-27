@@ -51,18 +51,19 @@ function rootRedirectTemplate(packageName: string, baseUrl: string): string {
   <meta charset="utf-8">
   <meta http-equiv="refresh" content="0; url=${targetUrl}">
   <title>Redirecting...</title>
+  <script>document.documentElement.setAttribute('data-theme', 'light');</script>
   <style>
-    body {
+    html,body {
+      height: 100%;
+      margin: 0;
+      background: #f9fafb;
+      color: #1f2937;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      background: #0d1117;
-      color: #c9d1d9;
     }
-    a { color: #58a6ff; }
+    a { color: #4b5563; }
   </style>
 </head>
 <body>
