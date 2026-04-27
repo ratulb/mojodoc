@@ -46,7 +46,7 @@ export async function render(site: DocSite, outDir: string): Promise<void> {
 function rootRedirectTemplate(packageName: string, baseUrl: string): string {
   const targetUrl = `${baseUrl}${packageName}/`.replace(/\/+/g, '/');
   return `<!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="refresh" content="0; url=${targetUrl}">
@@ -56,7 +56,7 @@ function rootRedirectTemplate(packageName: string, baseUrl: string): string {
     html,body {
       height: 100%;
       margin: 0;
-      background: #f9fafb;
+      background: #f9fafb !important;
       color: #1f2937;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       display: flex;
