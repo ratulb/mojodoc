@@ -2521,8 +2521,8 @@ a.type-link[href^="https://"]:hover .sig-type::after {
   min-width: 22px;
   height: 16px;
   border-radius: 3px;
-  background: rgba(75, 85, 99, 0.12);
-  color: var(--ember);
+  background: rgba(255,255,255,0.1);
+  color: var(--bg-gradient-text);
   padding: 0 3px;
   letter-spacing: 0;
   flex-shrink: 0;
@@ -2541,8 +2541,8 @@ a.type-link[href^="https://"]:hover .sig-type::after {
   flex-shrink: 0;
   font-size: 0.68rem;
   font-weight: 600;
-  color: var(--text-muted);
-  background: var(--bg-raised);
+  color: var(--bg-gradient-text);
+  background: rgba(255,255,255,0.1);
   padding: 1px 6px;
   border-radius: 10px;
   font-family: var(--font-mono);
@@ -2550,8 +2550,8 @@ a.type-link[href^="https://"]:hover .sig-type::after {
 }
 
 .sidebar-kind-link.active .sidebar-kind-count {
-  color: var(--ember);
-  background: rgba(75, 85, 99, 0.12);
+  color: var(--bg-gradient-hover);
+  background: rgba(255,255,255,0.12);
 }
 
 /* ── Light-mode overrides ── */
@@ -2565,15 +2565,7 @@ a.type-link[href^="https://"]:hover .sig-type::after {
 }
 
 [data-theme="light"] .sidebar-kind-icon {
-  background: rgba(75, 85, 99, 0.1);
-}
-
-[data-theme="light"] .sidebar-kind-count {
   background: rgba(0, 0, 0, 0.05);
-}
-
-[data-theme="light"] .sidebar-kind-link.active .sidebar-kind-count {
-  background: rgba(75, 85, 99, 0.1);
 }
 
 /* ── Sidebar grouped items (package index + module detail) ── */
@@ -2668,7 +2660,7 @@ div.sidebar-group-label:hover {
 .sidebar-chevron {
   flex-shrink: 0;
   margin-left: auto;
-  color: var(--text-muted);
+  color: var(--bg-gradient-text);
   transition: transform 180ms var(--ease-out-expo);
 }
 
