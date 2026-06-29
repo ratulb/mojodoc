@@ -2601,11 +2601,12 @@ a.type-link[href^="https://"]:hover .sig-type::after {
   padding: var(--space-2) var(--space-3);
   font-family: var(--font-mono);
   font-size: 0.82rem;
-  color: var(--text-secondary);
+  color: var(--bg-gradient-text);
   border-radius: 6px;
   line-height: 1.3;
   user-select: none;
   cursor: pointer;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 /* When sidebar-group-label is also a link (module pages) */
@@ -2618,26 +2619,26 @@ a.sidebar-group-label {
 }
 
 a.sidebar-group-label:hover {
-  background: rgba(75, 85, 99, 0.06);
-  color: var(--text-primary);
+  background: rgba(255,255,255,0.1);
+  color: var(--bg-gradient-hover);
 }
 
 a.sidebar-group-label.active {
-  border-left-color: var(--ember);
-  background: rgba(75, 85, 99, 0.08);
-  color: var(--ember);
+  border-left-color: var(--bg-gradient-hover);
+  background: rgba(255,255,255,0.08);
+  color: var(--bg-gradient-hover);
   font-weight: 600;
 }
 
 a.sidebar-group-label.active .sidebar-kind-count {
-  color: var(--ember);
-  background: rgba(75, 85, 99, 0.12);
+  color: var(--bg-gradient-hover);
+  background: rgba(255,255,255,0.12);
 }
 
 /* div label (package-index pages) – whole row is the toggle */
 div.sidebar-group-label:hover {
-  background: rgba(75, 85, 99, 0.06);
-  color: var(--text-primary);
+  background: rgba(255,255,255,0.1);
+  color: var(--bg-gradient-hover);
 }
 
 /* Fold/unfold button for module-detail pages */
