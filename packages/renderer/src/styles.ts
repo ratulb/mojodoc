@@ -13,9 +13,8 @@ export const styles = `
 :root {
   /* Greenish Gradient (matches mojo_programming and rust_programming) */
   --bg-gradient: linear-gradient(120deg, #0650b1, rgb(0, 128, 0));
-  --bg-gradient-text: #e2e8f0;
-  --bg-gradient-text-light: #e6edf3;
-  --bg-gradient-sidebar-text: #ffffff;
+  --bg-gradient-text: #ffffff;
+  --bg-gradient-hover: #7dd3fc;
 
   /* Gray Professional Palette */
   --fire-50: #f9fafb;
@@ -396,7 +395,7 @@ code, pre {
 }
 
 .github-link:hover {
-  color: var(--bg-gradient-text-light) !important;
+  color: var(--bg-gradient-text) !important;
 }
 
 .header-center {
@@ -558,7 +557,7 @@ code, pre {
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-3);
-  color: var(--bg-gradient-sidebar-text);
+  color: var(--bg-gradient-text);
   font-size: 0.875rem;
   font-weight: 500;
   transition: all var(--duration-fast) var(--ease-out-expo);
@@ -581,21 +580,21 @@ code, pre {
 
 .nav-link:hover {
   background: rgba(255,255,255,0.1);
-  color: #7dd3fc;
+  color: var(--bg-gradient-hover);
   text-decoration: none;
 }
 
 .nav-link:hover::before {
-  background: #7dd3fc;
+  background: var(--bg-gradient-hover);
 }
 
 .nav-node.active > .nav-link {
-  color: #7dd3fc;
+  color: var(--bg-gradient-hover);
   font-weight: 600;
 }
 
 .nav-node.active > .nav-link::before {
-  background: #7dd3fc;
+  background: var(--bg-gradient-hover);
 }
 
 .nav-icon {
@@ -612,7 +611,7 @@ code, pre {
 
 .nav-arrow {
   font-size: 0.6rem;
-  color: var(--bg-gradient-sidebar-text);
+  color: var(--bg-gradient-text);
   transition: transform var(--duration-fast) var(--ease-out-expo);
   opacity: 0.6;
 }
@@ -2468,7 +2467,7 @@ a.type-link[href^="https://"]:hover .sig-type::after {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--bg-gradient-sidebar-text);
+  color: var(--bg-gradient-text);
   margin-bottom: var(--space-2);
   padding-left: var(--space-1);
   text-shadow: 0 1px 2px rgba(0,0,0,0.3);
@@ -2491,7 +2490,7 @@ a.type-link[href^="https://"]:hover .sig-type::after {
   border-radius: 6px;
   font-family: var(--font-mono);
   font-size: 0.82rem;
-  color: var(--bg-gradient-sidebar-text);
+  color: var(--bg-gradient-text);
   text-decoration: none;
   transition: background var(--duration-fast) var(--ease-out-expo),
               color var(--duration-fast) var(--ease-out-expo),
@@ -2503,13 +2502,13 @@ a.type-link[href^="https://"]:hover .sig-type::after {
 
 .sidebar-kind-link:hover {
   background: rgba(255,255,255,0.1);
-  color: #7dd3fc;
+  color: var(--bg-gradient-hover);
 }
 
 .sidebar-kind-link.active {
-  border-left-color: #7dd3fc;
+  border-left-color: var(--bg-gradient-hover);
   background: rgba(255,255,255,0.08);
-  color: #7dd3fc;
+  color: var(--bg-gradient-hover);
   font-weight: 600;
 }
 
@@ -2702,7 +2701,7 @@ div.sidebar-group-label .sidebar-chevron {
   border-radius: 4px;
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: var(--bg-gradient-sidebar-text);
+  color: var(--bg-gradient-text);
   text-decoration: none;
   white-space: nowrap;
   overflow: hidden;
@@ -2713,7 +2712,7 @@ div.sidebar-group-label .sidebar-chevron {
 }
 
 .sidebar-item-link:hover {
-  color: #7dd3fc;
+  color: var(--bg-gradient-hover);
   background: rgba(255,255,255,0.1);
 }
 
@@ -2735,6 +2734,6 @@ div.sidebar-group-label .sidebar-chevron {
 
 [data-theme="light"] .sidebar-item-link:hover {
   background: rgba(75, 85, 99, 0.05);
-  color: #7dd3fc;
+  color: var(--bg-gradient-hover);
 }
 `;
