@@ -40,7 +40,7 @@ marked.setOptions({
  */
 export type TypeRegistry = Map<string, string>;
 
-const STDLIB_BASE = 'https://docs.modular.com/mojo/stdlib';
+const STDLIB_BASE = 'https://mojolang.org/docs/std';
 
 /**
  * Infer a stdlib documentation URL for a type name based on stable URL patterns.
@@ -409,18 +409,18 @@ export function highlightType(
  * Resolve a mojo doc type path to a URL.
  *
  * Local types (e.g., /mojson/value/Value) -> local docs link
- * Stdlib types (e.g., /std/collections/string/string/String) -> docs.modular.com link
+ * Stdlib types (e.g., /std/collections/string/string/String) -> mojolang.org link
  * Local types with anchor (e.g., /mojson/value/#Value) -> local docs link
  */
 export function resolveTypePath(path: string, baseUrl: string, packageName: string): string | null {
   if (!path) return null;
 
   if (path.startsWith('/std/')) {
-    // Stdlib type -> link to docs.modular.com
+    // Stdlib type -> link to mojolang.org
     // Path format: /std/collections/string/string/String
-    // URL format: https://docs.modular.com/mojo/stdlib/collections/string/string/String
+    // URL format: https://mojolang.org/docs/std/collections/string/string/String
     const stdPath = path.replace(/^\/std\//, '');
-    return `https://docs.modular.com/mojo/stdlib/${stdPath}`;
+    return `${STDLIB_BASE}/${stdPath}`;
   }
 
   if (path.startsWith(`/${packageName}/`)) {

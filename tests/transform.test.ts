@@ -68,7 +68,7 @@ describe('type cross-referencing', () => {
 
     // String type in signature should be linked to Mojo stdlib docs
     expect(sigHtml).toContain('type-link');
-    expect(sigHtml).toContain('docs.modular.com/mojo/stdlib');
+    expect(sigHtml).toContain('mojolang.org/docs/std');
   });
 
   it('links stdlib types in arg types', () => {
@@ -82,7 +82,7 @@ describe('type cross-referencing', () => {
 
     // Arg type 'String' should link to stdlib
     expect(argHtml).toContain('type-link');
-    expect(argHtml).toContain('docs.modular.com/mojo/stdlib');
+    expect(argHtml).toContain('mojolang.org/docs/std');
   });
 
   it('links local types in signatures', () => {
@@ -155,7 +155,7 @@ describe('type cross-referencing', () => {
 
     // 'List' should be linked (stdlib) and 'Item' should be linked (local)
     // They should be separate links, not one big link
-    expect(sigHtml).toContain('docs.modular.com');  // List -> stdlib
+    expect(sigHtml).toContain('mojolang.org/docs/std');  // List -> stdlib
     expect(sigHtml).toContain('testlib/types/index.html#Item');  // Item -> local
   });
 });
