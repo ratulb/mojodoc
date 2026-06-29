@@ -11,6 +11,11 @@ export const styles = `
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
+  /* Greenish Gradient (matches mojo_programming and rust_programming) */
+  --bg-gradient: linear-gradient(120deg, #0650b1, rgb(0, 128, 0));
+  --bg-gradient-text: #d4d4d8;
+  --bg-gradient-text-light: #e6edf3;
+
   /* Gray Professional Palette */
   --fire-50: #f9fafb;
   --fire-100: #f3f4f6;
@@ -285,30 +290,20 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
 }
 
 body {
   font-family: var(--font-display);
-  background: var(--bg-void);
+  background: transparent;
   color: var(--text-primary);
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* Background Glow Effect */
-body::before {
-  content: '';
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: var(--gradient-glow);
-  pointer-events: none;
-  z-index: -1;
-  animation: subtleFloat 20s ease-in-out infinite;
-}
+/* Background Glow Effect removed (gradient is the backdrop) */
 
 @keyframes subtleFloat {
   0%, 100% { transform: translate(0, 0) rotate(0deg); }
@@ -361,10 +356,8 @@ code, pre {
   left: 0;
   right: 0;
   height: var(--header-height);
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
-  border-bottom: 1px solid var(--glass-border);
+  background: transparent;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -373,20 +366,36 @@ code, pre {
 }
 
 .header::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--ember), transparent);
-  opacity: 0.3;
+  display: none;
 }
 
 .header-left, .header-right {
   display: flex;
   align-items: center;
   gap: var(--space-4);
+}
+
+.header-left,
+.header-right,
+.logo-text,
+.logo-icon,
+.version,
+.github-link,
+.github-link svg,
+.sidebar-toggle,
+.search-trigger,
+.search-trigger span,
+.search-trigger kbd {
+  color: var(--bg-gradient-text) !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.search-trigger kbd {
+  border-color: rgba(255,255,255,0.2) !important;
+}
+
+.github-link:hover {
+  color: var(--bg-gradient-text-light) !important;
 }
 
 .header-center {
@@ -455,11 +464,11 @@ code, pre {
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  background: var(--bg-raised);
-  border: 1px solid var(--border-subtle);
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.15);
   border-radius: var(--radius-lg);
   padding: var(--space-2) var(--space-5);
-  color: var(--text-muted);
+  color: var(--bg-gradient-text);
   cursor: pointer;
   min-width: 320px;
   transition: all var(--duration-normal) var(--ease-out-expo);
@@ -467,27 +476,10 @@ code, pre {
   overflow: hidden;
 }
 
-.search-trigger::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  background: var(--gradient-fire);
-  border-radius: inherit;
-  opacity: 0;
-  z-index: -1;
-  transition: opacity var(--duration-normal);
-}
-
 .search-trigger:hover {
-  border-color: transparent;
-  background: var(--bg-elevated);
-  color: var(--text-secondary);
+  background: rgba(0,0,0,0.35);
+  border-color: rgba(255,255,255,0.25);
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(75, 85, 99, 0.15);
-}
-
-.search-trigger:hover::before {
-  opacity: 1;
 }
 
 .search-trigger kbd {
@@ -495,11 +487,11 @@ code, pre {
   font-family: var(--font-display);
   font-size: 0.65rem;
   font-weight: 600;
-  background: var(--bg-void);
+  background: rgba(0,0,0,0.3);
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-sm);
-  border: 1px solid var(--border-default);
-  color: var(--text-dim);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--bg-gradient-text);
 }
 
 .github-link {
@@ -527,12 +519,12 @@ code, pre {
   left: 0;
   bottom: 0;
   width: var(--sidebar-width);
-  background: var(--bg-deep);
-  border-right: 1px solid var(--border-subtle);
+  background: transparent;
+  border-right: 1px solid rgba(255,255,255,0.1);
   overflow-y: auto;
   padding: 0;
   scrollbar-width: thin;
-  scrollbar-color: var(--border-default) transparent;
+  scrollbar-color: rgba(255,255,255,0.3) transparent;
 }
 
 .sidebar::-webkit-scrollbar {
@@ -565,13 +557,14 @@ code, pre {
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-3);
-  color: var(--text-secondary);
+  color: var(--bg-gradient-text);
   font-size: 0.875rem;
   font-weight: 500;
   transition: all var(--duration-fast) var(--ease-out-expo);
   position: relative;
   border-radius: var(--radius-sm);
   margin: 1px 0;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .nav-link::before {
@@ -586,22 +579,22 @@ code, pre {
 }
 
 .nav-link:hover {
-  background: var(--bg-raised);
-  color: var(--text-primary);
+  background: rgba(255,255,255,0.1);
+  color: var(--bg-gradient-text-light);
   text-decoration: none;
 }
 
 .nav-link:hover::before {
-  background: var(--ember);
+  background: var(--bg-gradient-text-light);
 }
 
 .nav-node.active > .nav-link {
-  color: var(--ember);
+  color: var(--bg-gradient-text-light);
   font-weight: 600;
 }
 
 .nav-node.active > .nav-link::before {
-  background: var(--ember);
+  background: var(--bg-gradient-text-light);
 }
 
 .nav-icon {
@@ -618,7 +611,7 @@ code, pre {
 
 .nav-arrow {
   font-size: 0.6rem;
-  color: var(--text-dim);
+  color: var(--bg-gradient-text);
   transition: transform var(--duration-fast) var(--ease-out-expo);
   opacity: 0.6;
 }
@@ -632,7 +625,7 @@ code, pre {
 .nav-children {
   margin-left: var(--space-4);
   padding-left: var(--space-3);
-  border-left: 1px solid var(--border-subtle);
+  border-left: 1px solid rgba(255,255,255,0.15);
   display: none;
   flex-direction: column;
 }
@@ -711,6 +704,8 @@ code, pre {
   margin-left: var(--sidebar-width);
   padding: var(--space-10);
   max-width: calc(var(--content-max-width) + var(--sidebar-width) + var(--space-10) * 2);
+  background: var(--bg-surface);
+  min-height: 100vh;
 }
 
 /* Page Header - Dramatic */
