@@ -13,7 +13,7 @@ export const styles = `
 :root {
   /* Greenish Gradient (matches mojo_programming and rust_programming) */
   --bg-gradient: linear-gradient(120deg, #0650b1, rgb(0, 128, 0));
-  --bg-gradient-text: #ffffff;
+  --bg-gradient-text: #f5f7fa;
   --bg-gradient-hover: #7dd3fc;
 
   /* Gray Professional Palette */
@@ -50,7 +50,7 @@ export const styles = `
   /* Dark Theme (Default) - now Gray */
   --bg-void: #f9fafb;
   --bg-deep: #f3f4f6;
-  --bg-surface: #ffffff;
+  --bg-surface: #f5f7fa;
   --bg-raised: #e5e7eb;
   --bg-elevated: #ffffff;
   --bg-card: rgba(255, 255, 255, 0.9);
@@ -118,7 +118,7 @@ export const styles = `
 /* [data-theme="light"] {
   --bg-void: #ffffff;
   --bg-deep: #f8fafc;
-  --bg-surface: #ffffff;
+  --bg-surface: #f5f7fa;
   --bg-raised: #f1f5f9;
   --bg-elevated: #ffffff;
   --bg-card: rgba(255, 255, 255, 0.9);
