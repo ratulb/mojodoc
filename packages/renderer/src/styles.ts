@@ -15,7 +15,7 @@ export const styles = `
   --bg-gradient: linear-gradient(120deg, #0650b1, rgb(0, 128, 0));
   --bg-gradient-text: #e2e8f0;
   --bg-gradient-text-light: #e6edf3;
-  --bg-gradient-sidebar-text: #ffffff;
+  --bg-gradient-sidebar-text: #ff0000;
 
   /* Gray Professional Palette */
   --fire-50: #f9fafb;
