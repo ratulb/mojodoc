@@ -2467,9 +2467,10 @@ a.type-link[href^="https://"]:hover .sig-type::after {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: var(--bg-gradient-text);
   margin-bottom: var(--space-2);
   padding-left: var(--space-1);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .sidebar-kind-list {
@@ -2489,24 +2490,25 @@ a.type-link[href^="https://"]:hover .sig-type::after {
   border-radius: 6px;
   font-family: var(--font-mono);
   font-size: 0.82rem;
-  color: var(--text-secondary);
+  color: var(--bg-gradient-text);
   text-decoration: none;
   transition: background var(--duration-fast) var(--ease-out-expo),
               color var(--duration-fast) var(--ease-out-expo),
               border-left-color var(--duration-fast) var(--ease-out-expo);
   border-left: 2px solid transparent;
   line-height: 1.3;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .sidebar-kind-link:hover {
-  background: rgba(75, 85, 99, 0.06);
-  color: var(--text-primary);
+  background: rgba(255,255,255,0.1);
+  color: var(--bg-gradient-text-light);
 }
 
 .sidebar-kind-link.active {
-  border-left-color: var(--ember);
-  background: rgba(75, 85, 99, 0.08);
-  color: var(--ember);
+  border-left-color: var(--bg-gradient-text-light);
+  background: rgba(255,255,255,0.08);
+  color: var(--bg-gradient-text-light);
   font-weight: 600;
 }
 
