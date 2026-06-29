@@ -51,9 +51,9 @@ export const styles = `
   --bg-void: #f9fafb;
   --bg-deep: #f3f4f6;
   --bg-surface: #f0f7ff;
-  --bg-raised: #e5edf8;
-  --bg-elevated: #f0f7ff;
-  --bg-card: #f0f7ff;
+  --bg-raised: #e5e7eb;
+  --bg-elevated: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.9);
 
   --text-primary: #1f2937;
   --text-secondary: #4b5563;
@@ -119,9 +119,9 @@ export const styles = `
   --bg-void: #ffffff;
   --bg-deep: #f8fafc;
   --bg-surface: #f0f7ff;
-  --bg-raised: #e5edf8;
-  --bg-elevated: #f0f7ff;
-  --bg-card: #f0f7ff;
+  --bg-raised: #f1f5f9;
+  --bg-elevated: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.9);
 
   --text-primary: #0f172a;
   --text-secondary: #475569;
