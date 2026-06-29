@@ -29,5 +29,13 @@
   "packageManager": "pnpm@9.15.9",
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "commander": "^15.0.0",
+    "highlight.js": "^11.11.1",
+    "marked": "^18.0.5",
+    "marked-highlight": "^2.2.4",
+    "open": "^11.0.0",
+    "ora": "^9.4.1"
   }
 }
