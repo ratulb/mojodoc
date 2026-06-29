@@ -2702,18 +2702,19 @@ div.sidebar-group-label .sidebar-chevron {
   border-radius: 4px;
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  color: var(--text-muted);
+  color: var(--bg-gradient-sidebar-text);
   text-decoration: none;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
   transition: color var(--duration-fast) var(--ease-out-expo),
               background var(--duration-fast) var(--ease-out-expo);
 }
 
 .sidebar-item-link:hover {
-  color: var(--text-primary);
-  background: rgba(75, 85, 99, 0.05);
+  color: #7dd3fc;
+  background: rgba(255,255,255,0.1);
 }
 
 [data-theme="light"] div.sidebar-group-label:hover {
@@ -2734,5 +2735,6 @@ div.sidebar-group-label .sidebar-chevron {
 
 [data-theme="light"] .sidebar-item-link:hover {
   background: rgba(75, 85, 99, 0.05);
+  color: #7dd3fc;
 }
 `;
