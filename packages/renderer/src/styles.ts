@@ -13,7 +13,7 @@ export const styles = `
 :root {
   /* Greenish Gradient (matches mojo_programming and rust_programming) */
   --bg-gradient: linear-gradient(120deg, #0650b1, rgb(0, 128, 0));
-  --bg-gradient-text: #d4d4d8;
+  --bg-gradient-text: #e2e8f0;
   --bg-gradient-text-light: #e6edf3;
 
   /* Gray Professional Palette */
