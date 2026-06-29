@@ -15,7 +15,7 @@ export const styles = `
   --bg-gradient: linear-gradient(120deg, #0650b1, rgb(0, 128, 0));
   --bg-gradient-text: #e2e8f0;
   --bg-gradient-text-light: #e6edf3;
-  --bg-gradient-sidebar-text: #f1f5f9;
+
 
   /* Gray Professional Palette */
   --fire-50: #f9fafb;
@@ -558,7 +558,7 @@ code, pre {
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-3);
-  color: var(--bg-gradient-sidebar-text);
+  color: var(--bg-gradient-text);
   font-size: 0.875rem;
   font-weight: 500;
   transition: all var(--duration-fast) var(--ease-out-expo);
@@ -581,21 +581,21 @@ code, pre {
 
 .nav-link:hover {
   background: rgba(255,255,255,0.1);
-  color: var(--bg-gradient-text-light);
+  color: #7dd3fc;
   text-decoration: none;
 }
 
 .nav-link:hover::before {
-  background: var(--bg-gradient-text-light);
+  background: #7dd3fc;
 }
 
 .nav-node.active > .nav-link {
-  color: var(--bg-gradient-text-light);
+  color: #7dd3fc;
   font-weight: 600;
 }
 
 .nav-node.active > .nav-link::before {
-  background: var(--bg-gradient-text-light);
+  background: #7dd3fc;
 }
 
 .nav-icon {
@@ -612,7 +612,7 @@ code, pre {
 
 .nav-arrow {
   font-size: 0.6rem;
-  color: var(--bg-gradient-sidebar-text);
+  color: var(--bg-gradient-text);
   transition: transform var(--duration-fast) var(--ease-out-expo);
   opacity: 0.6;
 }
@@ -2468,7 +2468,7 @@ a.type-link[href^="https://"]:hover .sig-type::after {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--bg-gradient-sidebar-text);
+  color: var(--bg-gradient-text);
   margin-bottom: var(--space-2);
   padding-left: var(--space-1);
   text-shadow: 0 1px 2px rgba(0,0,0,0.3);
@@ -2491,7 +2491,7 @@ a.type-link[href^="https://"]:hover .sig-type::after {
   border-radius: 6px;
   font-family: var(--font-mono);
   font-size: 0.82rem;
-  color: var(--bg-gradient-sidebar-text);
+  color: var(--bg-gradient-text);
   text-decoration: none;
   transition: background var(--duration-fast) var(--ease-out-expo),
               color var(--duration-fast) var(--ease-out-expo),
@@ -2503,13 +2503,13 @@ a.type-link[href^="https://"]:hover .sig-type::after {
 
 .sidebar-kind-link:hover {
   background: rgba(255,255,255,0.1);
-  color: var(--bg-gradient-text-light);
+  color: #7dd3fc;
 }
 
 .sidebar-kind-link.active {
-  border-left-color: var(--bg-gradient-text-light);
+  border-left-color: #7dd3fc;
   background: rgba(255,255,255,0.08);
-  color: var(--bg-gradient-text-light);
+  color: #7dd3fc;
   font-weight: 600;
 }
 
