@@ -86,12 +86,12 @@ function getModuleNavItems(mod: ModuleDecl): NavItemRef[] {
     });
   }
 
-  // Aliases
-  for (const alias of mod.aliases) {
+  // Comptime values
+  for (const comptime of mod.aliases) {
     items.push({
-      kind: 'alias',
-      name: alias.name,
-      anchor: toAnchor(alias.name),
+      kind: 'comptime',
+      name: comptime.name,
+      anchor: toAnchor(comptime.name),
     });
   }
 

@@ -12,7 +12,7 @@ import type {
   FunctionItem,
   StructItem,
   TraitItem,
-  AliasItem,
+  ComptimeItem,
   PublicApiItem,
 } from '@mojodoc/transform';
 
@@ -123,7 +123,7 @@ function kindBadge(kind: string): string {
       return 'struct';
     case 'trait':
       return 'trait';
-    case 'alias':
+    case 'comptime':
       return 'const';
     case 'field':
       return 'fd';
@@ -231,7 +231,7 @@ export function moduleTemplate(
     name: a.name,
     anchor: a.anchor,
     summary: a.summary || '',
-    kind: 'alias',
+    kind: 'comptime',
   }));
 
   const hasOverview =
@@ -315,7 +315,7 @@ export function moduleTemplate(
             aliasRows.length > 0
               ? `
             <div class="overview-group">
-              <h2 class="overview-heading">Constants &amp; Type Aliases</h2>
+              <h2 class="overview-heading">Comptime values</h2>
               ${overviewTable(aliasRows)}
             </div>
           `
@@ -373,9 +373,9 @@ export function moduleTemplate(
         mod.aliases.length > 0
           ? `
         <section class="doc-section" id="constants">
-          <h2 class="section-title">Constants &amp; Type Aliases</h2>
+          <h2 class="section-title">Comptime values</h2>
           <div class="items-list">
-            ${mod.aliases.map((a) => aliasTemplate(a)).join('')}
+            ${mod.aliases.map((a) => comptimeTemplate(a)).join('')}
           </div>
         </section>
       `
@@ -821,41 +821,41 @@ export function traitTemplate(trait: TraitItem): string {
 }
 
 /**
- * Generate alias item HTML.
+ * Generate comptime item HTML.
  */
-export function aliasTemplate(alias: AliasItem): string {
+export function comptimeTemplate(comptime: ComptimeItem): string {
   return `
-    <div class="doc-item alias" id="${alias.anchor}">
-      <div class="item-ribbon alias"></div>
+    <div class="doc-item comptime" id="${comptime.anchor}">
+      <div class="item-ribbon comptime"></div>
       <div class="item-header">
         <h3 class="item-title">
-          <span class="kind-badge alias">const</span>
-          <span class="item-name">${escapeHtml(alias.name)}</span>
-          <a class="item-permalink" href="#${alias.anchor}" aria-label="Permalink to ${escapeHtml(alias.name)}">§</a>
+          <span class="kind-badge comptime">const</span>
+          <span class="item-name">${escapeHtml(comptime.name)}</span>
+          <a class="item-permalink" href="#${comptime.anchor}" aria-label="Permalink to ${escapeHtml(comptime.name)}">§</a>
         </h3>
       </div>
 
       <div class="signature-card">
-        <pre class="signature">${alias.signatureHtml}</pre>
+        <pre class="signature">${comptime.signatureHtml}</pre>
       </div>
 
       ${
-        alias.value
+        comptime.value
           ? `
-        <div class="alias-value">
+        <div class="comptime-value">
           <span class="value-label">Value:</span>
-          <code>${escapeHtml(alias.value)}</code>
+          <code>${escapeHtml(comptime.value)}</code>
         </div>
       `
           : ''
       }
 
-      ${alias.summary ? `<p class="item-summary">${escapeHtml(alias.summary)}</p>` : ''}
+      ${comptime.summary ? `<p class="item-summary">${escapeHtml(comptime.summary)}</p>` : ''}
 
       ${
-        alias.descriptionHtml
+        comptime.descriptionHtml
           ? `
-        <div class="item-description">${alias.descriptionHtml}</div>
+        <div class="item-description">${comptime.descriptionHtml}</div>
       `
           : ''
       }
@@ -1003,11 +1003,11 @@ function renderReExportsByKind(items: PublicApiItem[], baseUrl: string): string 
     struct: [],
     trait: [],
     function: [],
-    alias: [],
+    comptime: [],
   };
 
   for (const item of items) {
-    const key = item.kind in byKind ? item.kind : 'alias';
+    const key = item.kind in byKind ? item.kind : 'comptime';
     byKind[key].push(item);
   }
 
@@ -1015,10 +1015,10 @@ function renderReExportsByKind(items: PublicApiItem[], baseUrl: string): string 
     struct: 'Structs',
     trait: 'Traits',
     function: 'Functions',
-    alias: 'Constants &amp; Type Aliases',
+    comptime: 'Comptime values',
   };
 
-  const order = ['struct', 'trait', 'function', 'alias'];
+  const order = ['struct', 'trait', 'function', 'comptime'];
 
   return order
     .filter((k) => byKind[k].length > 0)

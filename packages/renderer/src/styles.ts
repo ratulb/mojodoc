@@ -43,7 +43,7 @@ export const styles = `
   --color-function: #4b5563;
   --color-struct: #6b7280;
   --color-trait: #8b5cf6;
-  --color-alias: #6b7280;
+  --color-comptime: #6b7280;
   --color-field: #6b7280;
   --color-module: #9ca3af;
 
@@ -76,6 +76,7 @@ export const styles = `
   --gradient-glow: radial-gradient(ellipse at center, rgba(75, 85, 99, 0.08) 0%, transparent 70%);
   --gradient-plasma: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
   --gradient-cyan: linear-gradient(135deg, #9ca3af 0%, #6b7280 100%);
+  --comptime-gradient: linear-gradient(135deg, #f59e0b, #d97706);
 
   /* Typography */
   --font-display: "Inter", system-ui, sans-serif;
@@ -689,9 +690,9 @@ code, pre {
   background: linear-gradient(135deg, rgba(167, 139, 250, 0.2), rgba(167, 139, 250, 0.1));
   color: var(--color-trait);
 }
-.nav-item.alias .nav-item-badge {
+.nav-item.comptime .nav-item-badge {
   background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(251, 191, 36, 0.1));
-  color: var(--color-alias);
+  color: var(--color-comptime);
 }
 
 /* ============================================================================
@@ -829,7 +830,7 @@ code, pre {
   color: white;
   box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
 }
-.kind-badge.alias, .kind-badge.const {
+.kind-badge.comptime, .kind-badge.const {
   background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
   color: white;
   box-shadow: 0 2px 8px rgba(75, 85, 99, 0.3);
@@ -930,7 +931,7 @@ code, pre {
   background: var(--gradient-plasma);
   box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
 }
-.item-ribbon.alias {
+.item-ribbon.comptime {
   background: linear-gradient(180deg, #fbbf24, #f59e0b);
   box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
 }
@@ -1549,7 +1550,7 @@ a.type-link[href^="https://"]:hover .sig-type::after {
 }
 
 /* Alias Value */
-.alias-value {
+.comptime-value {
   background: var(--bg-raised);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
@@ -1568,7 +1569,7 @@ a.type-link[href^="https://"]:hover .sig-type::after {
   letter-spacing: 0.05em;
 }
 
-.alias-value code {
+.comptime-value code {
   font-family: var(--font-mono);
   color: var(--lava);
 }
@@ -1774,7 +1775,7 @@ a.type-link[href^="https://"]:hover .sig-type::after {
 .api-card.function::before { background: var(--fn-gradient); }
 .api-card.struct::before { background: var(--struct-gradient); }
 .api-card.trait::before { background: var(--trait-gradient); }
-.api-card.alias::before { background: var(--alias-gradient); }
+.api-card.comptime::before { background: var(--comptime-gradient); }
 
 .api-card:hover {
   border-color: var(--border-accent);

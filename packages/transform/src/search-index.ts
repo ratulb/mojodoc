@@ -95,17 +95,17 @@ export function buildSearchIndex(modules: Module[]): SearchIndex {
       });
     }
 
-    // Index aliases
-    for (const alias of mod.aliases) {
+    // Index comptime values
+    for (const comptime of mod.aliases) {
       items.push({
-        id: `${mod.fullPath}.${alias.name}`,
-        kind: 'alias',
-        name: alias.name,
-        fullPath: `${mod.fullPath}.${alias.name}`,
+        id: `${mod.fullPath}.${comptime.name}`,
+        kind: 'comptime',
+        name: comptime.name,
+        fullPath: `${mod.fullPath}.${comptime.name}`,
         urlPath: mod.urlPath,
-        anchor: alias.anchor,
-        signature: alias.signature,
-        summary: alias.summary,
+        anchor: comptime.anchor,
+        signature: comptime.signature,
+        summary: comptime.summary,
         inputTypes: [],
         outputType: null,
       });

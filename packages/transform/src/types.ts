@@ -55,7 +55,7 @@ export interface PublicApiSection {
  * A reference to an item in the public API.
  */
 export interface PublicApiItem {
-  kind: 'function' | 'struct' | 'trait' | 'alias';
+  kind: 'function' | 'struct' | 'trait' | 'comptime';
   name: string;
   sourceModule: string;
   urlPath: string;
@@ -75,7 +75,7 @@ export interface Module {
   functions: FunctionItem[];
   structs: StructItem[];
   traits: TraitItem[];
-  aliases: AliasItem[];
+  aliases: ComptimeItem[];
   parentPackage: string;
   /** Source file path relative to package root (e.g., "config.mojo") */
   sourceFile: string;
@@ -178,8 +178,8 @@ export interface TraitItem {
   deprecated: string | null;
 }
 
-export interface AliasItem {
-  kind: 'alias';
+export interface ComptimeItem {
+  kind: 'comptime';
   name: string;
   anchor: string;
   signature: string;

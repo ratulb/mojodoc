@@ -10,7 +10,7 @@ import type {
   FunctionOverload,
   StructDecl,
   TraitDecl,
-  AliasDecl,
+  ComptimeDecl,
 } from '@mojodoc/parser';
 
 import type {
@@ -21,7 +21,7 @@ import type {
   FunctionItem,
   StructItem,
   TraitItem,
-  AliasItem,
+  ComptimeItem,
   ProcessedOverload,
   ProcessedArg,
   ProcessedTypeParam,
@@ -174,7 +174,7 @@ export function transform(doc: MojoDocOutput, options: TransformOptions = {}): D
  * Build a type registry by scanning ALL path-bearing fields in the mojo doc
  * JSON output. This harvests type name → URL mappings from:
  *
- * - Struct/trait/alias declarations (their own paths)
+ * - Struct/trait/comptime declarations (their own paths)
  * - Struct/trait parentTraits (name + path for each implemented trait)
  * - Function args (type + path for each argument)
  * - Function returns (type + path)
@@ -225,7 +225,7 @@ function registerType(
 }
 
 /**
- * Register a local type (struct, trait, alias) when mojo doc doesn't provide
+ * Register a local type (struct, trait, comptime) when mojo doc doesn't provide
  * a path. Constructs the URL from the module path and type name.
  */
 function registerLocalType(
@@ -367,13 +367,13 @@ function scanModuleForTypes(
     }
   }
 
-  // Aliases: declaration path (only type-like names)
-  for (const alias of mod.aliases || []) {
-    if (alias.name[0] === alias.name[0].toUpperCase()) {
-      if (alias.path) {
-        registerType(alias.name, alias.path, packageName, baseUrl, registry);
+  // Comptime values: declaration path (only type-like names)
+  for (const comptime of mod.aliases || []) {
+    if (comptime.name[0] === comptime.name[0].toUpperCase()) {
+      if (comptime.path) {
+        registerType(comptime.name, comptime.path, packageName, baseUrl, registry);
       } else {
-        registerLocalType(alias.name, modulePath, packageName, baseUrl, registry);
+        registerLocalType(comptime.name, modulePath, packageName, baseUrl, registry);
       }
     }
   }
@@ -506,7 +506,7 @@ function transformModule(
     functions: mod.functions.map((fn) => transformFunction(fn, linkCtx)),
     structs: mod.structs.map((s) => transformStruct(s, linkCtx)),
     traits: mod.traits.map((t) => transformTrait(t, linkCtx)),
-    aliases: mod.aliases.map((a) => transformAlias(a, linkCtx)),
+    aliases: mod.aliases.map((a) => transformComptime(a, linkCtx)),
     parentPackage: parentPath,
     sourceFile,
   };
@@ -684,24 +684,24 @@ function transformTrait(trait: TraitDecl, linkCtx: TypeLinkContext): TraitItem {
 }
 
 /**
- * Transform an alias declaration.
+ * Transform a comptime declaration.
  */
-function transformAlias(alias: AliasDecl, linkCtx: TypeLinkContext): AliasItem {
+function transformComptime(comptime: ComptimeDecl, linkCtx: TypeLinkContext): ComptimeItem {
   return {
-    kind: 'alias',
-    name: alias.name,
-    anchor: toAnchor(alias.name),
-    signature: alias.signature || `comptime ${alias.name}`,
+    kind: 'comptime',
+    name: comptime.name,
+    anchor: toAnchor(comptime.name),
+    signature: comptime.signature || `comptime ${comptime.name}`,
     signatureHtml: highlightSignature(
-      alias.signature || `comptime ${alias.name}`,
+      comptime.signature || `comptime ${comptime.name}`,
       linkCtx.typeRegistry
     ),
-    summary: alias.summary || extractSummary(alias.description),
-    description: alias.description || '',
-    descriptionHtml: renderMarkdown(alias.description || ''),
-    value: alias.value || '',
-    typeParams: (alias.parameters || []).map(transformTypeParam),
-    deprecated: alias.deprecated || null,
+    summary: comptime.summary || extractSummary(comptime.description),
+    description: comptime.description || '',
+    descriptionHtml: renderMarkdown(comptime.description || ''),
+    value: comptime.value || '',
+    typeParams: (comptime.parameters || []).map(transformTypeParam),
+    deprecated: comptime.deprecated || null,
   };
 }
 

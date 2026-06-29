@@ -146,7 +146,7 @@ export function buildPublicApi(
       const fn = sourceModule.functions.find((f) => f.name === itemName);
       const struct = sourceModule.structs.find((s) => s.name === itemName);
       const trait = sourceModule.traits.find((t) => t.name === itemName);
-      const alias = sourceModule.aliases.find((a) => a.name === itemName);
+      const comptime = sourceModule.aliases.find((a) => a.name === itemName);
 
       let item: PublicApiItem | null = null;
 
@@ -177,14 +177,14 @@ export function buildPublicApi(
           anchor: trait.anchor,
           summary: trait.summary || '',
         };
-      } else if (alias) {
+      } else if (comptime) {
         item = {
-          kind: 'alias',
-          name: alias.name,
+          kind: 'comptime',
+          name: comptime.name,
           sourceModule: imp.module,
           urlPath: sourceModule.urlPath,
-          anchor: alias.anchor,
-          summary: alias.summary || '',
+          anchor: comptime.anchor,
+          summary: comptime.summary || '',
         };
       }
 

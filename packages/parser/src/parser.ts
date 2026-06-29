@@ -9,7 +9,7 @@ import type {
   FunctionDecl,
   StructDecl,
   TraitDecl,
-  AliasDecl,
+  ComptimeDecl,
 } from './types.js';
 
 export class ParseError extends Error {
@@ -156,11 +156,11 @@ export function flattenModules(pkg: PackageDecl): ModuleDecl[] {
 }
 
 /**
- * Get all items (functions, structs, traits, aliases) from a module.
+ * Get all items (functions, structs, traits, comptime) from a module.
  */
 export function getModuleItems(
   mod: ModuleDecl
-): Array<FunctionDecl | StructDecl | TraitDecl | AliasDecl> {
+): Array<FunctionDecl | StructDecl | TraitDecl | ComptimeDecl> {
   return [...mod.functions, ...mod.structs, ...mod.traits, ...mod.aliases];
 }
 

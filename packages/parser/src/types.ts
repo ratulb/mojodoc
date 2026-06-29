@@ -33,7 +33,7 @@ export interface ModuleDecl {
   functions: FunctionDecl[];
   structs: StructDecl[];
   traits: TraitDecl[];
-  aliases: AliasDecl[];
+  aliases: ComptimeDecl[];
 }
 
 // ============================================================================
@@ -148,11 +148,11 @@ export interface TraitDecl {
 }
 
 // ============================================================================
-// Alias declarations
+// Comptime declarations
 // ============================================================================
 
-export interface AliasDecl {
-  kind: 'alias';
+export interface ComptimeDecl {
+  kind: 'comptime';
   name: string;
   signature: string;
   summary: string;
@@ -179,5 +179,5 @@ export function isModuleDecl(decl: PackageDecl | ModuleDecl): decl is ModuleDecl
 // Union types for convenience
 // ============================================================================
 
-export type DocItem = FunctionDecl | StructDecl | TraitDecl | AliasDecl;
-export type DocItemKind = 'function' | 'struct' | 'trait' | 'alias' | 'field' | 'method';
+export type DocItem = FunctionDecl | StructDecl | TraitDecl | ComptimeDecl;
+export type DocItemKind = 'function' | 'struct' | 'trait' | 'comptime' | 'field' | 'method';

@@ -146,7 +146,7 @@ export const scripts = `
       function: 'fn',
       struct: 'st',
       trait: 'tr',
-      alias: 'al',
+      comptime: 'cp',
       field: 'fd',
       method: 'fn'
     };
@@ -321,9 +321,9 @@ export const scripts = `
   // Package index: scan all re-export table rows, group by kind, list items
   // --------------------------------------------------------------------------
   function buildPublicApiSidebar(kindsPanel, content) {
-    const KIND_ORDER = ['function', 'struct', 'trait', 'alias'];
-    const KIND_ICONS  = { function: 'fn', struct: 'st', trait: 'tr', alias: 'al' };
-    const KIND_LABELS = { function: 'Functions', struct: 'Structs', trait: 'Traits', alias: 'Aliases' };
+    const KIND_ORDER = ['function', 'struct', 'trait', 'comptime'];
+    const KIND_ICONS  = { function: 'fn', struct: 'st', trait: 'tr', comptime: 'cp' };
+    const KIND_LABELS = { function: 'Functions', struct: 'Structs', trait: 'Traits', comptime: 'Comptime values' };
 
     const groups = {};
     content.querySelectorAll('.re-export-table tbody tr').forEach(row => {
@@ -475,7 +475,7 @@ export const scripts = `
     if (l.includes('function')) return 'fn';
     if (l.includes('struct')) return 'st';
     if (l.includes('trait')) return 'tr';
-    if (l.includes('constant') || l.includes('alias')) return 'al';
+    if (l.includes('constant') || l.includes('comptime')) return 'cp';
     if (l.includes('module') || l.includes('subpackage')) return 'mod';
     return '§';
   }
