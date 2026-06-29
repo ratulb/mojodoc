@@ -379,7 +379,6 @@ code, pre {
 .header-right,
 .logo-text,
 .logo-icon,
-.version,
 .github-link,
 .github-link svg,
 .sidebar-toggle,
@@ -432,12 +431,12 @@ code, pre {
 
 .version {
   font-size: 0.7rem;
-  font-weight: 500;
-  color: var(--text-muted);
+  font-weight: 600;
+  color: #000000;
   background: var(--bg-elevated);
   padding: var(--space-1) var(--space-3);
   border-radius: var(--radius-full);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border-default);
   font-family: var(--font-mono);
 }
 
